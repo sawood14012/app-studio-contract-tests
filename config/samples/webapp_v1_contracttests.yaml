@@ -1,0 +1,9 @@
+apiVersion: webapp.appstudio.qe/v1
+kind: ContractTests
+metadata:
+  name: contracttests-sample
+spec:
+  # TODO(user): Add fields here
+  contractName: Sawood
+  waitSeconds: 10
+
