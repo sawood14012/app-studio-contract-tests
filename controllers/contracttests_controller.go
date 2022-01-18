@@ -56,7 +56,7 @@ func (r *ContractTestsReconciler) Reconcile(ctx context.Context, req ctrl.Reques
 	// var helloWorld examplev1.HelloWorld
 	var ContractT webappv1.ContractTests
 	if err := r.Get(ctx, req.NamespacedName, &ContractT); err != nil {
-		log.Error(err, "unable to fetch HelloWorld")
+		log.Error(err, "unable to fetch Contract")
 		return ctrl.Result{}, client.IgnoreNotFound(err)
 	}
 	log.Info("Reconciler Contract name: " + ContractT.Spec.ContractName)
