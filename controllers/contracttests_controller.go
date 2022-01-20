@@ -71,13 +71,15 @@ func (r *ContractTestsReconciler) Reconcile(ctx context.Context, req ctrl.Reques
 	ContractT.Status.Message = "Hello " + ContractT.Spec.ContractName
 	// ContractT.Status.UpdatedAt = nil
 
-	ContractT.Status.UpdatedAt = time.Now().String()
+	//ContractT.Status.UpdatedAt = time.Now().String()
 	ContractT.Status.Status = "Active"
 
 	if err := r.Status().Update(ctx, &ContractT); err != nil {
 		log.Error(err, "Unable to update HelloWorld status")
 		return ctrl.Result{}, err
 	}
+	log.Info("Status updated")
+	log.Info(fmt.Sprintf("%+v\n", ContractT))
 	return ctrl.Result{}, nil
 }
 
